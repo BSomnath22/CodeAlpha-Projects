@@ -1,5 +1,6 @@
 import time
 
+
 def chatbot():
 
     hello_count = 0
@@ -12,9 +13,18 @@ def chatbot():
 
         user_input = input("You: ").lower().strip().replace("?", "")
 
+        # Exit anytime
+        if user_input in ["bye", "goodbye"]:
+            print("Bot: Goodbye!")
+            break
+
+        # Waiting for yes/no reply
         if waiting_for_question:
 
-            if user_input in ["yes", "yeah", "yep", "sure", "okay", "ok"]:
+            if user_input in [
+                "yes", "yeah", "yep",
+                "sure", "okay", "ok"
+            ]:
                 print("Bot: Go ahead, I am listening.")
                 waiting_for_question = False
 
@@ -29,6 +39,7 @@ def chatbot():
 
             continue
 
+        # Greetings
         if user_input in ["hello", "hi"]:
 
             hello_count += 1
@@ -77,17 +88,27 @@ def chatbot():
         elif user_input == "who made you":
             print("Bot: I was created using Python.")
 
-        elif user_input in ["sure", "okay", "ok", "alright", "yeah", "yep"]:
+        elif user_input in [
+            "sure", "okay", "ok",
+            "alright", "yeah", "yep"
+        ]:
             print("Bot: That's good to hear.")
             time.sleep(1)
             print("Bot: I'm listening.")
 
-        elif user_input in ["no", "nothing", "nothing much", "not really", "nah"]:
+        elif user_input in [
+            "no", "nothing",
+            "nothing much",
+            "not really", "nah"
+        ]:
             print("Bot: That's alright.")
             time.sleep(1)
             print("Bot: We can just chat if you'd like.")
 
-        elif user_input in ["maybe", "not sure", "i don't know"]:
+        elif user_input in [
+            "maybe", "not sure",
+            "i don't know"
+        ]:
             print("Bot: No rush.")
             time.sleep(1)
             print("Bot: Take your time.")
@@ -107,7 +128,12 @@ def chatbot():
         elif user_input in ["good night", "night"]:
             print("Bot: Good night. Take care.")
 
-        elif user_input in ["what can you do", "what you can do", "help", "commands"]:
+        elif user_input in [
+            "what can you do",
+            "what you can do",
+            "help",
+            "commands"
+        ]:
 
             print("Bot: Here are some things you can ask me:")
             time.sleep(1)
@@ -166,12 +192,7 @@ def chatbot():
             time.sleep(1)
             print("Bot: But I enjoy talking with users.")
 
-        elif user_input == "12":
-            print("Bot: Yes, you are human.")
-            time.sleep(1)
-            print("Bot: And you're talking with Neo.")
-
-        elif "who am i" in user_input or "know who i am" in user_input:
+        elif user_input == "12" or "who am i" in user_input:
             print("Bot: Yes, you are human.")
             time.sleep(1)
             print("Bot: And you're talking with Neo.")
@@ -181,8 +202,16 @@ def chatbot():
             time.sleep(1)
             print("Bot: Because light attracts bugs.")
 
-        elif user_input == "how old are you" or "what is you age" or "your age":
-            print("Bot: I was created recently, so I'm quite young.")
+        # FIXED BUG HERE
+        elif user_input in [
+            "how old are you",
+            "what is your age",
+            "your age"
+        ]:
+            print(
+                "Bot: I was created recently, "
+                "so I'm quite young."
+            )
 
         elif user_input == "do you like python":
             print("Bot: Of course.")
@@ -190,20 +219,32 @@ def chatbot():
             print("Bot: Python is what I am built with.")
 
         elif user_input == "are you real":
-            print("Bot: I'm a program, but our conversation is real.")
+            print(
+                "Bot: I'm a program, "
+                "but our conversation is real."
+            )
 
         elif user_input == "favorite color":
             print("Bot: I don't really have one.")
             time.sleep(1)
-            print("Bot: But blue seems popular among programmers.")
+            print(
+                "Bot: But blue seems popular "
+                "among programmers."
+            )
 
         elif user_input == "where are you from":
-            print("Bot: I live inside this Python program.")
+            print(
+                "Bot: I live inside "
+                "this Python program."
+            )
 
         elif user_input == "do you have friends":
             print("Bot: Not really.")
             time.sleep(1)
-            print("Bot: But I enjoy talking with users.")
+            print(
+                "Bot: But I enjoy "
+                "talking with users."
+            )
 
         elif user_input == "nice":
             print("Bot: Thank you.")
@@ -211,17 +252,21 @@ def chatbot():
         elif user_input == "cool":
             print("Bot: Glad you think so.")
 
-        elif user_input in ["wow", "woah", "whoa", "awesome", "amazing"]:
+        elif user_input in [
+            "wow", "woah",
+            "whoa", "awesome",
+            "amazing"
+        ]:
             print("Bot: That's nice to hear.")
             time.sleep(1)
-            print("Bot: Go ahead, tell me what is in your mind.")
+            print(
+                "Bot: Go ahead, tell me "
+                "what is in your mind."
+            )
             waiting_for_question = True
-
-        elif user_input in ["bye", "goodbye"]:
-            print("Bot: Goodbye!")
-            break
 
         else:
             print("Bot: Sorry, I don't understand that.")
+
 
 chatbot()
