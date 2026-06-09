@@ -13,12 +13,11 @@ def chatbot():
 
         user_input = input("You: ").lower().strip().replace("?", "")
 
-        # Exit anytime
+        
         if user_input in ["bye", "goodbye"]:
             print("Bot: Goodbye!")
             break
 
-        # Waiting for yes/no reply
         if waiting_for_question:
 
             if user_input in [
@@ -39,7 +38,6 @@ def chatbot():
 
             continue
 
-        # Greetings
         if user_input in ["hello", "hi"]:
 
             hello_count += 1
@@ -202,7 +200,6 @@ def chatbot():
             time.sleep(1)
             print("Bot: Because light attracts bugs.")
 
-        # FIXED BUG HERE
         elif user_input in [
             "how old are you",
             "what is your age",
