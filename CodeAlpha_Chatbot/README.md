@@ -1,13 +1,24 @@
-# Basic Chatbot# Basic Chatbot
+# Basic Chatbot
 
-A rule-based chatbot built using Python.
+A simple Python chatbot built using:
+
+* Functions
+* Loops
+* Conditional Statements
+* User Input
+* Variables
+* Lists
+* Time Delays
+
+Features:
+
+* Interactive greetings
+* Numbered help menu
+* Joke responses
+* Human-like conversation flow
+* Conversation memory
+* Simple command system
 
 Run:
 
-python basic_chatbot.py
-
-A rule-based chatbot built using Python.
-
-Run:
-
-python basic_chatbot.py
+python chatbot.py
